@@ -12,7 +12,7 @@
 `Ont(5349f95)` Base on commit 5349f95,a completed network module include all net protocal logic(ping pong addr version etc).
 
 ### Steps
-- clone https://github.com/BooniesFX/ontology-stress-test, then ==make==
+- clone https://github.com/BooniesFX/ontology-stress-test, then `make`
 - Setup ontology-stress-test on server
 - Use testcli to send  trasactions from a client to the server.
 - record time period spend.
