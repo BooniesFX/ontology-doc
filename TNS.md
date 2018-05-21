@@ -7,18 +7,22 @@ TNS （Trust Name Service）是一个基于Ontology的分布式、开源和可�
  2. 个人账户
  3. DApp智能合约hash
  4. 其他生态地址
+ 
  注册模式：
-拍卖（收费）
-预分配（子域名）
-先到先得（测试）
+ 
+- 拍卖（收费）
+- 预分配（子域名）
+- 先到先得（测试）
 
 ### 短时（低频）域名服务
 1. 一般转账业务
 2. 限时访问业务（内容分享等）
 3. 限次访问业务
+
 注册模式：
-申请（不收费或极少费用）
-自定义
+
+- 申请（不收费或极少费用）
+- 自定义
 
 ## 基础框架
 
@@ -67,5 +71,5 @@ TNS （Trust Name Service）是一个基于Ontology的分布式、开源和可�
   
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjkzNzUyNDc0XX0=
+eyJoaXN0b3J5IjpbOTU4MjQ3MDAzLDI5Mzc1MjQ3NF19
 -->
