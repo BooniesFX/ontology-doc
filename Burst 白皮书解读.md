@@ -46,8 +46,17 @@ ACCT->HTLC
 ## 技术融合
 Dymaxion Tangle 由上面提到的多种技术演进而来，组成了一个全新的框架
 ### Dymaxion Tangle vs. IOTA Tangle 
+IOTA原来使用Curl哈希算法来做交易签名，后来被证明该算法可被伪造攻击[IOTA vulnerability report](https://github.com/mit-dci/tangled-curl/blob/master/vuln-iota.md)，交易签名不用curl算法，但是其他的过程中仍然使用这种算法。基于对curl的担心，Dymaxion会使用其他的签名算法。同时Dymaxion会有任意个逻辑上独立的tangle而不只是IOTA一个tangle，IOTA的tangle可以在Dymaxion里存在。
 
+### Dymaxion 链上互动
+Dymaxion分为主链（记账）和各种染色的tangle链。在每个主链的块上均可以打开和关闭一个tangle.
+主链的出块时间是4分钟，每个tangle可以在同一个块上打开和关闭。同时资产在各种链之间通过主链来流转。
+每条tangle都可以看做是Burst的闪电网络。
+![top-view](https://github.com/BooniesFX/ontology-doc/blob/master/attach/Dymaxion.jpg?raw=true)
+### P2P for ad-hoc DL
+Dymaxion主网通过P2P连接，组合成的多条网络已经运行3年
+### Dymaxion的匿名性
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDkwMjQ5NDI1XX0=
+eyJoaXN0b3J5IjpbNDMxMDE1OTEyXX0=
 -->
