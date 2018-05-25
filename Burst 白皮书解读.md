@@ -54,9 +54,59 @@ Dymaxion分为主链（记账）和各种染色的tangle链。在每个主链的
 每条tangle都可以看做是Burst的闪电网络。
 ![top-view](https://github.com/BooniesFX/ontology-doc/blob/master/attach/Dymaxion.jpg?raw=true)
 ### P2P for ad-hoc DL
-Dymaxion主网通过P2P连接，组合成的多条网络已经运行3年
+Dymaxion主网通过P2P连接，组合成的多跳网络已经运行3年
 ### Dymaxion的匿名性
+在新建每个DL的时候都可以选择环签名或是zk-SNARKs 。在主链上不会使用匿名算法。主要是考虑zk-SNARKs 的算法风险，如果有超发的风险，那么在子链上实现匿名签名的话风险会小很多，DL层的ttl可以让风险只停留在子链上。
+由于主链不会才有匿名算法，同时主链上的许多地址会重复使用，因此主链与DL层的交易可能破坏子链的匿名性。为了解决这个问题，可以使用一种匿名的ACCT模式。即主链的secret和子链的secret不用保持一致。
+## DL实现
+-  初始化
+	1. 发起者设置
+	2. 创建DL（节点发现）
+	3. 订阅阶段
+- 运行
+- 关闭
+	1. 节点DL关闭广播
+	2. 结算
+### 创建一个DL
+1. DL初始化（ACTT）
+	- 共识机制，POC,POW,POS
+	- TTL，2^17块
+	- 订阅时间，发起者对他们在tangle上抵押签名时限，max 360 blk
+	- 抵押，对tangle上的units的担保 utxo
+	- 特性，比如匿名性
+ 	- units，类似发行IPO
+ 	- 订阅者，参与tangle的人
+ 	- 花费，分为固定费用和可变费用，固定费用是创建一个tangle的费用。可变费用按照订阅者的数量来算。可变费用会锁定到tangle结算
+一般来说发起者是tangle的第一个订阅者，开始需要将burst地址上的资产进行锁定，后来的订阅者也都需要这样操作。如果一个tangle成功的被矿工记录下来，那么它就会获得一个唯一ID，它的颜色，同时unit都将被确定。不同的tangle之间无法直接交易，需要通过主链来转换。
+### 节点发现
+首先DL初始要求被广播到需要的peers，peers继续广播这些需求并检查自己是否符合这些要求，如果符合的话则称为DL的一部分
+### DL 订阅
+如果发起者广播的需求里没有订阅者列表的话，那么所有的节点都可以参与到这个tangle里，如果有订阅者列表，只有列表中的节点可以参与到私有tangle中。订阅者需要在订阅时间内对自己的地址进行签名来声明自己已订阅该tangle，因此整个tangle 的ttl是要求大于订阅时限的。整个DL的TTL可以是一个块（4 min)
+## 交易
+tangle上的交易是由其他的节点来验证的。现在使用的是POC的算法，这个算法需要大概1-5G的存储，而且不会有某个矿工因为有几百TB的空间而比5G的矿工获得更多的算力支持。
+## 关闭DL
 
+- DL结束的条件
+	1. TTL到期
+	2. 除了发起者没人在订阅时限里参与进来
+
+### tangle 记录
+tangle的参与者可以自己选择保留tangle 的记录，这个记录不会留在主链上，主链上只会有创建和关闭tangle的hash记录。这个记录可以证明留在节点那的记录的真实性。
+## 节点共谋攻击
+部分节点共同构造双花交易并互相验证产生寄生链
+IOTA: 马尔科夫链模特卡洛算法
+BURST：bft-smart ，f作恶节点，2f-1个诚实节点
+## DDOS攻击
+tangle上的交易时不需要费用的。burst引进了POC算法来保证不会被DDOS攻击。同时由于在交易中作恶的点会被记录被列入黑名单中。
+## 性能指标
+从网络性能上来说，可以达到
+- 1683 tx/s ordinary payments
+- 168 tx/s RS-anonymous transactions 
+- 112 tx/s zk-SNARK-anonymous transactions
+从延时来说，只有 3756 tx/块
+
+## POC
+![enter image description here](https://github.com/BooniesFX/ontology-doc/blob/master/attach/poc.png?raw=true)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDMxMDE1OTEyXX0=
+eyJoaXN0b3J5IjpbMTYwMjk1NDg3NV19
 -->
