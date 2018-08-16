@@ -38,10 +38,14 @@ noise:
 	- 分链路通道
 
 ## 性能
-noise: 10k+ sig  150k+ without sig
-cellnet: 110k+ without sig
+noise: 
+local test 10k+ sig  150k+ without sig 
+sig(单线程):20k
+verification(单线程):8k
+cellnet:
+local test 110k+ without sig
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzUwMTc2NTNdfQ==
+eyJoaXN0b3J5IjpbLTU0MTgyNTcyMV19
 -->
