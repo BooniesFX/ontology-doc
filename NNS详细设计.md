@@ -61,5 +61,5 @@ static byte[] nameHashArray(string[] domainarray)
 - 类似于持有neo提取gas，但是奖池数目一定，超过奖池上限则投入新奖池中，只能按比例提取新奖池的NNC
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk0MDA4ODAwXX0=
+eyJoaXN0b3J5IjpbLTE3Mzc2ODk5MzUsMzk0MDA4ODAwXX0=
 -->
