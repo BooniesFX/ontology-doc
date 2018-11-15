@@ -108,5 +108,5 @@ tangle上的交易时不需要费用的。burst引进了POC算法来保证不会
 ## POC
 ![enter image description here](https://github.com/BooniesFX/ontology-doc/blob/master/attach/poc.png?raw=true)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwMjk1NDg3NV19
+eyJoaXN0b3J5IjpbMjUxNjExNjgyLDE2MDI5NTQ4NzVdfQ==
 -->
