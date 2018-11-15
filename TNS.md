@@ -56,6 +56,7 @@ TNS （Trust Name Service）是一个基于Ontology的分布式、开源和可�
 - 揭标：提供hash明文和报价，扣除系统费用
 - 发送交易获取域名所有权
 - 交易
+
 即时租赁：在短时间内（min-hour-day）获得某个预定或是有某些特征的名称，按时间收取一定费用或不收费，用来短时间内共享名称服务（文件路径，钱包地址，ip等）
 
 ### 解析管理
@@ -71,5 +72,6 @@ TNS （Trust Name Service）是一个基于Ontology的分布式、开源和可�
   
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU4MjQ3MDAzLDI5Mzc1MjQ3NF19
+eyJoaXN0b3J5IjpbLTE4NjA1ODkwMDYsOTU4MjQ3MDAzLDI5Mz
+c1MjQ3NF19
 -->
